@@ -386,13 +386,25 @@ function Projects() {
           {projects.map((p, i) => (
             <Reveal key={p.title} delay={i * 0.08}>
               <article className="group">
-                <Media
-                  src={p.image}
-                  alt={`${p.title} preview`}
-                  sizes="(min-width: 768px) 50vw, 100vw"
-                  className="aspect-[16/10] rounded-2xl"
-                  imgClassName="object-top transition-transform duration-700 group-hover:scale-[1.04]"
-                />
+                {(() => {
+                  const media = (
+                    <Media
+                      src={p.image}
+                      alt={`${p.title} preview`}
+                      sizes="(min-width: 768px) 50vw, 100vw"
+                      className="aspect-[16/10] rounded-2xl"
+                      imgClassName="object-top transition-transform duration-700 group-hover:scale-[1.04]"
+                    />
+                  );
+                  // Clickable preview for mouse users; the button below is the accessible link.
+                  return p.link ? (
+                    <a href={p.link.href} target="_blank" rel="noreferrer" tabIndex={-1} aria-hidden>
+                      {media}
+                    </a>
+                  ) : (
+                    media
+                  );
+                })()}
                 <div className="mt-5 flex items-baseline justify-between gap-3">
                   <h3 className="text-xl tracking-tight">{p.title}</h3>
                   {p.year && <span className="shrink-0 font-mono text-xs text-muted-foreground">{p.year}</span>}
@@ -409,9 +421,11 @@ function Projects() {
                   ))}
                 </ul>
                 {p.link && (
-                  <a href={p.link.href} target="_blank" rel="noreferrer" className="rule-link mt-4 inline-flex items-center gap-1 text-sm">
-                    {p.link.label} <ArrowUpRight className="size-3.5" />
-                  </a>
+                  <Button asChild size="lg" className="mt-5 h-10 rounded-full px-5">
+                    <a href={p.link.href} target="_blank" rel="noreferrer" aria-label={`${p.link.label}: ${p.title} (opens in a new tab)`}>
+                      {p.link.label} <ArrowUpRight data-icon="inline-end" />
+                    </a>
+                  </Button>
                 )}
               </article>
             </Reveal>

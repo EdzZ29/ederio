@@ -55,12 +55,19 @@ export type Experience = {
 export const experience: Experience[] = [
   {
     period: "June 2026 – Present",
-    role: "Full Stack Developer / App Developer",
+    role: "App Developer",
     company: "BizFrend",
     companyUrl: "https://bizfrend.com/",
     badge: "Part-time",
-    summary:
-      "Building and shipping features for the BizFrend web platform and mobile app, across front-end and back-end.",
+    summary: "Building and shipping mobile app features, from the screens users tap to the APIs behind them.",
+  },
+  {
+    period: "June 2026 – Present",
+    role: "Website Developer",
+    company: "BizFrend",
+    companyUrl: "https://bizfrend.com/",
+    badge: "Part-time",
+    summary: "Building web platform features across front-end and back-end, from UI to database.",
   },
   {
     period: "2025 – 2026",
@@ -106,6 +113,21 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    title: "Zap Zone Booking Platform",
+    type: "Website · Team project",
+    summary:
+      "Online booking for 12 Zap Zone locations across Michigan: a location map and search, packages, attractions and events. Built as part of the development team.",
+    image: "/images/work/zapzone-booking.webp",
+    tags: ["Web App", "Booking", "Team"],
+    link: { label: "Visit site", href: "https://booking.zap-zone.com/" },
+  },
+  {
+    title: "Zap Zone Analytics App",
+    type: "Mobile App",
+    summary: "The analytics app I developed for Zap Zone, putting the business’s numbers in the team’s pocket.",
+    tags: ["Mobile App", "Analytics", "Developer"],
+  },
+  {
     title: "AI-Integrated OBE Grading System",
     type: "Full-Stack Web App · Capstone",
     year: "2025 – 2026",
@@ -119,9 +141,9 @@ export const projects: Project[] = [
     type: "Web Platform & Mobile App",
     year: "2026 – Present",
     summary:
-      "Building and shipping features for the BizFrend web platform and mobile app as a Full Stack / App Developer.",
+      "Building and shipping features for the BizFrend web platform and mobile app as an App Developer and Website Developer.",
     tags: ["Full-Stack", "Mobile", "Production"],
-    link: { label: "bizfrend.com", href: "https://bizfrend.com/" },
+    link: { label: "Visit site", href: "https://bizfrend.com/" },
   },
 ];
 
@@ -136,7 +158,7 @@ export const capabilities = [
   },
   {
     title: "APIs & Databases",
-    body: "REST APIs with NestJS and Laravel, PostgreSQL schemas and Supabase auth, storage and row-level security.",
+    body: "REST APIs with NestJS and Laravel, PostgreSQL with Prisma, Redis caching, and Supabase auth, storage and row-level security.",
   },
 ];
 
@@ -159,6 +181,8 @@ export const stack = [
       { name: "NestJS", icon: "nestjs.svg" },
       { name: "Laravel", icon: "laravel.svg" },
       { name: "PostgreSQL", icon: "postgresql.svg" },
+      { name: "Prisma", icon: "prisma.svg" },
+      { name: "Redis", icon: "redis.svg" },
       { name: "Supabase", icon: "supabase.svg" },
     ],
   },
@@ -167,6 +191,16 @@ export const stack = [
     items: [
       { name: "React Native", icon: "react_light.svg" },
       { name: "Expo", icon: "expo.svg" },
+    ],
+  },
+  {
+    group: "Deployment",
+    items: [
+      { name: "Vercel", icon: "vercel.svg" },
+      { name: "Cloudflare", icon: "cloudflare.svg" },
+      { name: "Render", icon: "render.svg" },
+      { name: "Supabase", icon: "supabase.svg" },
+      { name: "GitHub", icon: "github.svg" },
     ],
   },
   {
@@ -264,8 +298,8 @@ export const buildLayers: { id: "frontend" | "backend" | "database"; label: stri
         id: "postgres",
         name: "PostgreSQL",
         icon: "postgresql.svg",
-        pitch: "Reliable relational data with strong integrity.",
-        note: "PostgreSQL with a normalized schema, indexes and migrations from day one.",
+        pitch: "Reliable relational data, with Prisma for type-safe queries.",
+        note: "PostgreSQL with Prisma: a typed schema, safe migrations and indexes from day one.",
       },
       {
         id: "supabase-db",
@@ -273,6 +307,13 @@ export const buildLayers: { id: "frontend" | "backend" | "database"; label: stri
         icon: "supabase.svg",
         pitch: "Hosted Postgres with row-level security built in.",
         note: "Hosted Postgres on Supabase with row-level security, so each user only sees their own data.",
+      },
+      {
+        id: "redis",
+        name: "PostgreSQL + Redis",
+        icon: "redis.svg",
+        pitch: "Add a fast cache for sessions, queues and real-time data.",
+        note: "PostgreSQL for your data plus Redis for caching, sessions and queues, so busy pages stay fast.",
       },
     ],
   },
