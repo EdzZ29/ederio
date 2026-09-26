@@ -99,7 +99,7 @@ export type Project = {
   type: string;
   year?: string;
   summary: string;
-  image: string;
+  image?: string; // leave out to show a "coming soon" placeholder
   tags: string[];
   link?: { label: string; href: string };
 };
@@ -120,7 +120,6 @@ export const projects: Project[] = [
     year: "2026 – Present",
     summary:
       "Building and shipping features for the BizFrend web platform and mobile app as a Full Stack / App Developer.",
-    image: "/images/work/bizfrend.png",
     tags: ["Full-Stack", "Mobile", "Production"],
     link: { label: "bizfrend.com", href: "https://bizfrend.com/" },
   },
