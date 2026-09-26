@@ -10,7 +10,7 @@ export const profile = {
   phone: "09458573462",
   email: "jrederio01@gmail.com",
   resume: "/Ederio-Resume.pdf",
-  photo: "/images/Ederio, Edmundo.jpg",
+  photo: "/images/profile.webp",
   available: true,
 };
 
@@ -84,7 +84,7 @@ export const education: { period: string; title: string; school: string; note: s
     title: "BS in Information Technology",
     school: "Caraga State University – Cabadbaran Campus",
     note: "Major in Information Technology",
-    logo: "/images/education/csu-seal.png",
+    logo: "/images/education/csu-seal.webp",
   },
   {
     period: "2014 – 2019",
@@ -111,7 +111,7 @@ export const projects: Project[] = [
     year: "2025 – 2026",
     summary:
       "Outcome-based education grading system with AI integration, built as Lead Developer for Caraga State University.",
-    image: "/images/work/csucc-grading.png",
+    image: "/images/work/csucc-grading.webp",
     tags: ["Full-Stack", "AI", "Lead Developer"],
   },
   {
