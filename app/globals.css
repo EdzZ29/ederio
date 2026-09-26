@@ -1,26 +1,206 @@
 @import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+@custom-variant dark (&:is(.dark *));
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
+  --font-serif: var(--font-instrument-serif);
+  --font-heading: var(--font-geist-sans);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  --animate-marquee: marquee 40s linear infinite;
+  --animate-caret: caret 1s steps(1) infinite;
+
+  @keyframes marquee {
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  @keyframes caret {
+    50% {
+      opacity: 0;
+    }
+  }
+  @keyframes flow {
+    from {
+      transform: translateY(-100%);
+    }
+    to {
+      transform: translateY(300%);
+    }
   }
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+/*
+ * Palettes. Each one sets a hue (--h), how much of it tints the neutrals
+ * (--bg-c), and the accent for light (--p-*) and dark (--pd-*) mode.
+ * "paper" is the original monochrome look.
+ */
+:root,
+[data-palette="paper"] {
+  --h: 100;
+  --bg-c: 0.004;
+  --p-l: 0.2;
+  --p-c: 0;
+  --pd-l: 0.95;
+  --pd-c: 0;
+}
+[data-palette="ocean"] {
+  --h: 245;
+  --bg-c: 0.008;
+  --p-l: 0.52;
+  --p-c: 0.16;
+  --pd-l: 0.75;
+  --pd-c: 0.13;
+}
+[data-palette="forest"] {
+  --h: 155;
+  --bg-c: 0.008;
+  --p-l: 0.5;
+  --p-c: 0.12;
+  --pd-l: 0.76;
+  --pd-c: 0.13;
+}
+[data-palette="sunset"] {
+  --h: 45;
+  --bg-c: 0.01;
+  --p-l: 0.56;
+  --p-c: 0.17;
+  --pd-l: 0.76;
+  --pd-c: 0.14;
+}
+[data-palette="grape"] {
+  --h: 295;
+  --bg-c: 0.01;
+  --p-l: 0.5;
+  --p-c: 0.19;
+  --pd-l: 0.76;
+  --pd-c: 0.13;
+}
+
+:root {
+  --radius: 0.625rem;
+  --background: oklch(0.967 var(--bg-c) var(--h));
+  --foreground: oklch(0.18 calc(var(--bg-c) * 1.5) var(--h));
+  --card: oklch(0.99 calc(var(--bg-c) * 0.5) var(--h));
+  --card-foreground: var(--foreground);
+  --popover: var(--card);
+  --popover-foreground: var(--foreground);
+  --primary: oklch(var(--p-l) var(--p-c) var(--h));
+  --primary-foreground: oklch(0.985 0 0);
+  --secondary: oklch(0.93 var(--bg-c) var(--h));
+  --secondary-foreground: var(--foreground);
+  --muted: oklch(0.93 var(--bg-c) var(--h));
+  --muted-foreground: oklch(0.52 calc(var(--bg-c) * 2) var(--h));
+  --accent: oklch(0.93 var(--bg-c) var(--h));
+  --accent-foreground: var(--foreground);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.89 var(--bg-c) var(--h));
+  --input: oklch(0.87 var(--bg-c) var(--h));
+  --ring: var(--primary);
+  --band: oklch(0.17 calc(var(--bg-c) * 1.5) var(--h));
+  --band-foreground: oklch(0.97 0 0);
+}
+
+.dark {
+  --background: oklch(0.155 calc(var(--bg-c) * 1.5) var(--h));
+  --foreground: oklch(0.95 var(--bg-c) var(--h));
+  --card: oklch(0.195 calc(var(--bg-c) * 1.5) var(--h));
+  --secondary: oklch(0.24 calc(var(--bg-c) * 1.5) var(--h));
+  --muted: oklch(0.24 calc(var(--bg-c) * 1.5) var(--h));
+  --muted-foreground: oklch(0.7 calc(var(--bg-c) * 2) var(--h));
+  --accent: oklch(0.24 calc(var(--bg-c) * 1.5) var(--h));
+  --primary: oklch(var(--pd-l) var(--pd-c) var(--h));
+  --primary-foreground: oklch(0.16 0.02 var(--h));
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --band: oklch(0.95 var(--bg-c) var(--h));
+  --band-foreground: oklch(0.16 0.01 var(--h));
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    @apply font-sans;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+  }
+  body {
+    @apply bg-background text-foreground;
+    letter-spacing: -0.011em;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  section[id] {
+    scroll-margin-top: 4.5rem;
+  }
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+  ::selection {
+    background: color-mix(in oklch, var(--primary) 25%, transparent);
+  }
+}
+
+@utility display {
+  font-weight: 200;
+  letter-spacing: -0.05em;
+  line-height: 0.9;
+}
+
+@utility label {
+  font-family: var(--font-geist-mono);
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+@utility rule-link {
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 1px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
