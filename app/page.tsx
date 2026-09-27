@@ -374,7 +374,7 @@ function Projects() {
           title="Selected work"
           aside={
             <>
-              Recent full-stack and mobile work. More code lives my{" "}
+              Recent full-stack and mobile work. More code lives on my{" "}
               <a href={socials.github} target="_blank" rel="noreferrer" className="rule-link text-foreground hover:text-primary">
                 GitHub
               </a>
