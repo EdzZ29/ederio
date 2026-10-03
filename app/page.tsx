@@ -1,7 +1,6 @@
 import Image from "next/image";
 import { ArrowDown, ArrowUpRight, Download, GraduationCap, Mail } from "lucide-react";
 import { MagneticScatterText } from "@/components/rareui/MagneticScatterText";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
@@ -9,27 +8,21 @@ import { FacebookIcon, GitHubIcon, InstagramIcon, LinkedInIcon, TikTokIcon } fro
 import { CopyEmail } from "@/components/site/copy-email";
 import { Header } from "@/components/site/header";
 import { Media } from "@/components/site/media";
-import { ProjectBuilder } from "@/components/site/project-builder";
 import { Reveal } from "@/components/site/reveal";
 import { ScrollTop } from "@/components/site/scroll-top";
 import { TechIcon } from "@/components/site/tech-icon";
 import {
   about,
-  buildFeatures,
-  buildLayers,
   capabilities,
   education,
   experience,
-  faqs,
   heroStats,
   marquee,
   nav,
   profile,
   projects,
-  projectTypes,
   socials,
   stack,
-  timelines,
 } from "./data";
 
 const socialLinks = [
@@ -56,9 +49,8 @@ export default function Home() {
         <Marquee />
         <About />
         <Experience />
-        <Build />
-        <Skills />
         <Projects />
+        <Skills />
       </main>
       <Contact />
       <ScrollTop />
@@ -369,7 +361,7 @@ function Projects() {
     <section id="projects" className="py-20 md:py-28">
       <Container>
         <SectionHeading
-          n="05"
+          n="03"
           label="Portfolio"
           title="Selected work"
           aside={
@@ -485,49 +477,6 @@ function Skills() {
               </ul>
             </div>
           ))}
-        </div>
-      </Container>
-    </section>
-  );
-}
-
-/* --------------------------------- Build ---------------------------------- */
-
-function Build() {
-  return (
-    <section id="build" className="py-20 md:py-28">
-      <Container>
-        <SectionHeading
-          n="03"
-          label="Start a project"
-          title={
-            <>
-              Let’s plan <em className="font-serif font-normal">your</em> build.
-            </>
-          }
-          aside="Pick a frontend, backend and database, and see how it fits together. Send me the brief in one click and I’ll reply with a plan."
-        />
-        <ProjectBuilder
-          email={profile.email}
-          projectTypes={projectTypes}
-          layers={buildLayers}
-          features={buildFeatures}
-          timelines={timelines}
-        />
-
-        <div className="mt-20 grid gap-8 border-t pt-12 md:grid-cols-[1fr_2fr] md:gap-16">
-          <div>
-            <h3 className="text-3xl font-light tracking-tight">Questions clients ask</h3>
-            <p className="mt-3 text-sm text-muted-foreground">Frontend, backend and databases in plain language.</p>
-          </div>
-          <Accordion type="single" collapsible defaultValue="faq-0">
-            {faqs.map((f, i) => (
-              <AccordionItem key={f.q} value={`faq-${i}`}>
-                <AccordionTrigger className="py-5 text-base font-normal md:text-lg">{f.q}</AccordionTrigger>
-                <AccordionContent className="max-w-2xl leading-relaxed text-muted-foreground">{f.a}</AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
         </div>
       </Container>
     </section>

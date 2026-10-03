@@ -39,8 +39,6 @@ export function Header({ nav }: { nav: NavItem[] }) {
     return () => observer.disconnect();
   }, [nav]);
 
-  const links = nav.filter((n) => n.href !== "#build");
-
   return (
     <header
       className={cn(
@@ -55,7 +53,7 @@ export function Header({ nav }: { nav: NavItem[] }) {
 
         <nav aria-label="Primary" className="hidden lg:block">
           <ul className="flex items-center gap-1">
-            {links.map((item) => (
+            {nav.map((item) => (
               <li key={item.href}>
                 <a
                   href={item.href}
@@ -82,8 +80,8 @@ export function Header({ nav }: { nav: NavItem[] }) {
         <div className="flex items-center gap-1.5">
           <ThemeSwitcher />
           <Button asChild size="lg" className="hidden h-10 rounded-full px-5 sm:inline-flex">
-            <a href="#build">
-              Start a project <ArrowUpRight data-icon="inline-end" />
+            <a href="#contact">
+              Contact me <ArrowUpRight data-icon="inline-end" />
             </a>
           </Button>
 

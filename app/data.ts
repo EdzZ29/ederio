@@ -113,6 +113,15 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    title: "Rank & Render",
+    type: "Website · Developer & Deployment",
+    summary:
+      "Marketing site for a digital growth studio that builds websites, SEO, AI automation and apps for businesses. I developed it end to end and deployed it on Vercel.",
+    image: "/images/work/rankandrender.webp",
+    tags: ["Website", "Business", "Vercel"],
+    link: { label: "Visit site", href: "https://rankandrender.com/" },
+  },
+  {
     title: "Zap Zone Booking Platform",
     type: "Website · Team project",
     summary:
@@ -215,138 +224,6 @@ export const stack = [
 export const nav = [
   { href: "#about", label: "About" },
   { href: "#experience", label: "Experience" },
-  { href: "#build", label: "Start a project" },
-  { href: "#skills", label: "Skills" },
   { href: "#projects", label: "Projects" },
-];
-
-// ---- "Start a project" builder -------------------------------------------
-
-export type BuildOption = {
-  id: string;
-  name: string;
-  icon?: string; // file in /public/icons
-  pitch: string; // one line: what it's best for
-  note: string; // shown in the brief as "how I'd approach it"
-};
-
-export const projectTypes = ["Website", "Web App", "Mobile App", "Web + Mobile", "API / Backend"];
-
-export const buildLayers: { id: "frontend" | "backend" | "database"; label: string; question: string; options: BuildOption[] }[] = [
-  {
-    id: "frontend",
-    label: "Frontend",
-    question: "What will your users see and tap?",
-    options: [
-      {
-        id: "react",
-        name: "React / Next.js",
-        icon: "react_light.svg",
-        pitch: "SEO-friendly sites, dashboards and web apps.",
-        note: "React with Next.js for fast, search-friendly pages and a rich dashboard experience.",
-      },
-      {
-        id: "vue",
-        name: "Vue / Nuxt",
-        icon: "nuxt.svg",
-        pitch: "Lightweight, quick to iterate, great for admin panels.",
-        note: "Vue with Nuxt: lightweight, quick to iterate on and easy to hand over.",
-      },
-      {
-        id: "rn",
-        name: "React Native + Expo",
-        icon: "expo.svg",
-        pitch: "One codebase for iOS and Android.",
-        note: "React Native + Expo, so iOS and Android ship from one codebase with over-the-air updates.",
-      },
-    ],
-  },
-  {
-    id: "backend",
-    label: "Backend",
-    question: "What runs the logic, auth and APIs?",
-    options: [
-      {
-        id: "nest",
-        name: "NestJS",
-        icon: "nestjs.svg",
-        pitch: "Structured TypeScript APIs that scale with your team.",
-        note: "A NestJS API in TypeScript: modular, typed end to end and easy to extend.",
-      },
-      {
-        id: "laravel",
-        name: "Laravel",
-        icon: "laravel.svg",
-        pitch: "Batteries included: auth, queues, admin, mail.",
-        note: "Laravel for built-in auth, queues and mail, which makes it quick for business systems.",
-      },
-      {
-        id: "supabase",
-        name: "Supabase",
-        icon: "supabase.svg",
-        pitch: "Managed auth, storage and realtime. Fastest to launch.",
-        note: "Supabase for managed auth, storage and realtime, so we spend time on features, not servers.",
-      },
-    ],
-  },
-  {
-    id: "database",
-    label: "Database",
-    question: "Where does your data live?",
-    options: [
-      {
-        id: "postgres",
-        name: "PostgreSQL",
-        icon: "postgresql.svg",
-        pitch: "Reliable relational data, with Prisma for type-safe queries.",
-        note: "PostgreSQL with Prisma: a typed schema, safe migrations and indexes from day one.",
-      },
-      {
-        id: "supabase-db",
-        name: "Supabase Postgres",
-        icon: "supabase.svg",
-        pitch: "Hosted Postgres with row-level security built in.",
-        note: "Hosted Postgres on Supabase with row-level security, so each user only sees their own data.",
-      },
-      {
-        id: "redis",
-        name: "PostgreSQL + Redis",
-        icon: "redis.svg",
-        pitch: "Add a fast cache for sessions, queues and real-time data.",
-        note: "PostgreSQL for your data plus Redis for caching, sessions and queues, so busy pages stay fast.",
-      },
-    ],
-  },
-];
-
-export const buildFeatures = [
-  "Login & user roles",
-  "Admin dashboard",
-  "Payments",
-  "Real-time updates",
-  "File uploads",
-  "AI integration",
-  "Push notifications",
-  "Reports & analytics",
-];
-
-export const timelines = ["ASAP", "1–3 months", "3+ months", "Flexible"];
-
-export const faqs = [
-  {
-    q: "Do you handle both the frontend and the backend?",
-    a: "Yes. I build the frontend, write the API and set up the database, so there’s one person accountable for the whole thing working together.",
-  },
-  {
-    q: "Which database should I choose?",
-    a: "For most apps, PostgreSQL. It’s reliable, handles relationships between data well and scales a long way. If you want auth, file storage and realtime without running servers, Supabase gives you Postgres with all of that built in.",
-  },
-  {
-    q: "Can you build for both iOS and Android?",
-    a: "Yes, with React Native and Expo. One codebase runs on both platforms, which keeps cost and maintenance down, and it can share logic with your web app.",
-  },
-  {
-    q: "Not sure what stack you need?",
-    a: "That’s normal. Pick “Not sure” in the builder above, describe what you want to achieve, and I’ll recommend a stack that fits your budget and timeline.",
-  },
+  { href: "#skills", label: "Skills" },
 ];
