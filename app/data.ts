@@ -122,15 +122,6 @@ export const projects: Project[] = [
     link: { label: "Visit site", href: "https://rankandrender.com/" },
   },
   {
-    title: "AllDrive Rent a Car",
-    type: "Web App · Developer & Deployment",
-    summary:
-      "Car rental platform for a Butuan City rental business: browse the fleet, filter by vehicle type, transmission and budget, and book online with or without a driver. I developed it and deployed it on Vercel.",
-    image: "/images/work/alldrive.webp",
-    tags: ["Web App", "Booking", "Vercel"],
-    link: { label: "Visit site", href: "https://alldrive-theta.vercel.app/" },
-  },
-  {
     title: "Zap Zone Booking Platform",
     type: "Website · Team project",
     summary:
@@ -138,6 +129,24 @@ export const projects: Project[] = [
     image: "/images/work/zapzone-booking.webp",
     tags: ["Web App", "Booking", "Team"],
     link: { label: "Visit site", href: "https://booking.zap-zone.com/" },
+  },
+  {
+    title: "ActiveZone",
+    type: "Website · Developer & Deployment",
+    summary:
+      "Website for a Butuan City fitness studio: memberships, classes, trainers and facilities, with member log-in and online sign-up. I developed it and deployed it on Vercel.",
+    image: "/images/work/activezone.webp",
+    tags: ["Website", "Fitness", "Vercel"],
+    link: { label: "Visit site", href: "https://activezone-liart.vercel.app/" },
+  },
+  {
+    title: "AllDrive Rent a Car",
+    type: "Web App · Developer & Deployment",
+    summary:
+      "Car rental platform for a Butuan City rental business: browse the fleet, filter by vehicle type, transmission and budget, and book online with or without a driver. I developed it and deployed it on Vercel.",
+    image: "/images/work/alldrive.webp",
+    tags: ["Web App", "Booking", "Vercel"],
+    link: { label: "Visit site", href: "https://alldrive-theta.vercel.app/" },
   },
   // Temporarily hidden
   // {
