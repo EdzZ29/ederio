@@ -122,6 +122,15 @@ export const projects: Project[] = [
     link: { label: "Visit site", href: "https://rankandrender.com/" },
   },
   {
+    title: "AllDrive Rent a Car",
+    type: "Web App · Developer & Deployment",
+    summary:
+      "Car rental platform for a Butuan City rental business: browse the fleet, filter by vehicle type, transmission and budget, and book online with or without a driver. I developed it and deployed it on Vercel.",
+    image: "/images/work/alldrive.webp",
+    tags: ["Web App", "Booking", "Vercel"],
+    link: { label: "Visit site", href: "https://alldrive-theta.vercel.app/" },
+  },
+  {
     title: "Zap Zone Booking Platform",
     type: "Website · Team project",
     summary:
@@ -130,12 +139,13 @@ export const projects: Project[] = [
     tags: ["Web App", "Booking", "Team"],
     link: { label: "Visit site", href: "https://booking.zap-zone.com/" },
   },
-  {
-    title: "Zap Zone Analytics App",
-    type: "Mobile App",
-    summary: "The analytics app I developed for Zap Zone, putting the business’s numbers in the team’s pocket.",
-    tags: ["Mobile App", "Analytics", "Developer"],
-  },
+  // Temporarily hidden
+  // {
+  //   title: "Zap Zone Analytics App",
+  //   type: "Mobile App",
+  //   summary: "The analytics app I developed for Zap Zone, putting the business’s numbers in the team’s pocket.",
+  //   tags: ["Mobile App", "Analytics", "Developer"],
+  // },
   {
     title: "AI-Integrated OBE Grading System",
     type: "Full-Stack Web App · Capstone",
@@ -145,15 +155,16 @@ export const projects: Project[] = [
     image: "/images/work/csucc-grading.webp",
     tags: ["Full-Stack", "AI", "Lead Developer"],
   },
-  {
-    title: "BizFrend",
-    type: "Web Platform & Mobile App",
-    year: "2026 – Present",
-    summary:
-      "Building and shipping features for the BizFrend web platform and mobile app as an App Developer and Website Developer.",
-    tags: ["Full-Stack", "Mobile", "Production"],
-    link: { label: "Visit site", href: "https://bizfrend.com/" },
-  },
+  // Temporarily hidden
+  // {
+  //   title: "BizFrend",
+  //   type: "Web Platform & Mobile App",
+  //   year: "2026 – Present",
+  //   summary:
+  //     "Building and shipping features for the BizFrend web platform and mobile app as an App Developer and Website Developer.",
+  //   tags: ["Full-Stack", "Mobile", "Production"],
+  //   link: { label: "Visit site", href: "https://bizfrend.com/" },
+  // },
 ];
 
 export const capabilities = [
