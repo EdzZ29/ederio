@@ -113,6 +113,15 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    title: "TapAccess",
+    type: "Website · Founder & Developer",
+    summary:
+      "NFC digital business cards: one tap opens a business page with services, contact details and socials, so customers can call or save the number with no app. I founded the product and built and deployed the site.",
+    image: "/images/work/tapaccess.webp",
+    tags: ["Website", "NFC", "Founder"],
+    link: { label: "Visit site", href: "https://tapaccess.site/" },
+  },
+  {
     title: "Rank & Render",
     type: "Website · Developer & Deployment",
     summary:
